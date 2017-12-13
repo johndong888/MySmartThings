@@ -1,25 +1,26 @@
 definition(
     name: "Enhanced Auto Lock Door",
     namespace: "Lock Auto Super Enhanced",
-    author: "Arnaud",
+    author: "JD Inc",
     description: "Automatically locks a specific door after X minutes when closed  and unlocks it when open after X seconds.",
     category: "Safety & Security",
-    iconUrl: "http://www.gharexpert.com/mid/4142010105208.jpg",
-    iconX2Url: "http://www.gharexpert.com/mid/4142010105208.jpg"
-)
+    iconUrl: "http://i64.photobucket.com/albums/h171/johndong888/Tech/Icons/Schlage.jpg",
+    iconX2Url: "http://i64.photobucket.com/albums/h171/johndong888/Tech/Icons/Schlage.jpg",
+    iconX3Url: "http://i64.photobucket.com/albums/h171/johndong888/Tech/Icons/Schlage.jpg"
+    )
 
 preferences{
     section("Select the door lock:") {
         input "lock1", "capability.lock", required: true
     }
     section("Select the door contact sensor:") {
-        input "contact", "capability.contactSensor", required: true
+        input "contact", "capability.contactSensor", required: false
     }   
     section("Automatically lock the door when closed...") {
         input "minutesLater", "number", title: "Delay (in minutes):", required: true
     }
     section("Automatically unlock the door when open...") {
-        input "secondsLater", "number", title: "Delay (in seconds):", required: true
+        input "secondsLater", "number", title: "Delay (in seconds):", required: false
     }
     section( "Notifications" ) {
         input("recipients", "contact", title: "Send notifications to", required: false) {
